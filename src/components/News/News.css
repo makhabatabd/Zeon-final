@@ -1,0 +1,123 @@
+.news-main-div {
+    background-color: #ECECEC;
+    padding-bottom: 40px;
+}
+
+.news-main-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    padding: 8px 0 21px 0;
+    margin: 0;
+}
+
+.news-parts-outter {
+    background-color: white;
+}
+
+.news-parts {
+    display: flex;
+    padding: 3px 16px 13px 19px;
+    margin-bottom: 12px;
+}
+
+.news-part-image {
+    margin-right: 16px;
+    margin-top: 16px;
+}
+
+
+.news-part-text-outter {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-part-text-outter h4 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #393939;
+    margin: 0;
+    padding: 13px 0 6px 0px;
+}
+
+.news-part-text-outter p {
+    margin: 0px 0 13px 0;
+    color: #5B5B5B;
+    width: 894px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 23.1px;
+}
+
+.news-little-rectangle {
+    width: 6px;
+    height: 2px;
+    border: 1px dashed blue;
+}
+
+.text-buttons {
+    display: none;
+}
+
+@media screen and (max-width: 320px) {
+    .news-parts {
+        flex-direction: column;
+        justify-content: center;
+        padding: 16px 16px 20px 17px;
+    }
+
+    .news-part-image {
+        margin: 0;
+        padding-left: 8px;
+    }
+
+    .news-parts-outter-text {
+        width: 288px;
+    }
+
+    .news-part-text-outter h4 {
+        padding: 14px 0 6px 0;
+        margin: 0;
+        padding-left: 8px;
+        font-weight: 500;
+        font-size: 16px;
+        color: #393939;
+    }
+
+    .text-buttons {
+        display: block;
+        width: 240px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        color: #1D1D1B;
+        border: 1px solid #EDEDED;
+        background-color: white;
+        font-size: 13px;
+        margin-left: 10px;
+    }
+
+
+    .news-part-text-outter p {
+        max-width: 239px;
+        margin: 0 8px 6px 0;
+        padding-left: 10px;
+        font-weight: 300;
+        font-size: 14px;
+        color: #5B5B5B;
+        line-height: 23px;
+    }
+
+
+    .news-main-title {
+        padding: 24px 0 18px 0;
+        margin: 0;
+    }
+
+    .news-little-rectangle {
+        display: none;
+    }
+}

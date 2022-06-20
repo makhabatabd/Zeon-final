@@ -1,0 +1,55 @@
+.fav-div {
+    color: #393939;
+    font-weight: 500;
+    background-color: #ECECEC;
+    padding-bottom: 30px;
+}
+
+
+.fav-main-title {
+    font-size: 24px;
+    padding: 11px 0 12px 0;
+    margin: 0;
+}
+
+.fav-main-text {
+    font-size: 14px;
+    line-height: 17px;
+    color: #979797;
+    padding: 0 0 16px 0;
+    margin: 0;
+}
+
+.favorite-text {
+    margin: 4px 0 48px 0;
+    font-weight: 400;
+    font-size: 16px;
+    color: #393939;
+}
+
+.favorite-title {
+    font-weight: 500;
+    font-size: 24px;
+    margin: 0 0 16px 0;
+    color: #393939;
+}
+
+.maybe-cards {
+    display: flex;
+}
+
+.maybe-table-cards {
+    display: none;
+}
+
+
+@media screen and (max-width: 321px) {
+    .maybe-cards {
+        display: none;
+    }
+
+    .maybe-table-cards {
+        display: block;
+    }
+
+}

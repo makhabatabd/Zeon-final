@@ -1,0 +1,262 @@
+.main-cart-div {
+    display: flex;
+}
+
+.main-div {
+    background-color: #ECECEC;
+    color: #393939;
+    padding: 11px 0 90px 0;
+    position: relative;
+}
+
+.cart-inner {
+    background-color: white;
+    margin-bottom: 8px;
+    width: 768px;
+    position: relative;
+}
+
+.cart-card-inner {
+    display: flex;
+    padding: 12px;
+}
+
+.cart-pic {
+    margin-right: 16px;
+}
+
+.cart-title {
+    font-weight: 400;
+    font-size: 14px;
+    padding: 12px 0 8px 0;
+    margin: 0;
+    color: #393939;
+}
+
+.cart-size {
+    color: #7C7C7C;
+    font-weight: 400;
+    font-size: 13px;
+    margin: 6px 0 6px 0;
+}
+
+.cart-color {
+    color: #7C7C7C;
+    font-weight: 400;
+    font-size: 13px;
+    margin: 0 6px 0px 0;
+}
+
+.cart-price {
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0 0 12px 0;
+}
+
+input#number {
+    width: 32px;
+    background-color: transparent;
+}
+
+.count {
+    width: 32px;
+    height: 32px;
+    background-color: #EFEFEF;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+}
+
+.cart-delete {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.cart-payment-inner {
+    padding: 24px;
+}
+
+.cart-payment-title {
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 0 16px 0;
+}
+
+.cart-payment-inner span {
+    font-weight: 400;
+    font-size: 14px;
+    color: #979797;
+}
+
+.payment-button {
+    width: 388px;
+    height: 44px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.cart-payment-inner p {
+    font-weight: 400;
+    font-size: 14px;
+    display: inline-block;
+    margin: 0;
+}
+
+.payment-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 16px 0;
+}
+
+.cart-bottom-title {
+    font-weight: 500;
+    font-size: 24px;
+    color: #393939;
+    padding: 11px 0 16px 0;
+    margin: 0;
+}
+
+.mini-payment {
+    display: none;
+}
+
+.cart-payment-inner {
+    background-color: white;
+    width: 384px;
+    height: 270px;
+}
+
+.hr {
+    width: 336px;
+    border: 1px dashed #BFBFBF;
+    margin: 12px 0;
+}
+
+.main-cart-div {
+    padding-bottom: 130px;
+}
+
+@media screen and (max-width: 321px) {
+    .main-cart-div {
+        flex-direction: column;
+    }
+
+    .main-div {
+        padding: 11px 0 30px 0;
+    }
+
+    .cart-inner {
+        width: 288px;
+    }
+
+    .mini-payment-inner {
+        background-color: white;
+        width: 290px;
+    }
+
+    .payment-total-info {
+        background-color: white;
+        width: 290px;
+        height: 146px;
+    }
+
+    .cart-delete {
+        top: 0%;
+        right: 0%;
+    }
+
+    .mini-payment-inner {
+        padding: 16px;
+        position: relative;
+        height: 289px;
+    }
+
+    .cart-payment {
+        width: 320px;
+        position: fixed;
+        top: 36%;
+        left: 0%;
+    }
+
+    .payment-button {
+        width: 288px;
+        margin: 0 0px 18px 0;
+    }
+
+    .mini-payment {
+        display: block;
+    }
+
+    .mini-payment-inner {
+        height: 288px;
+        background-color: white;
+    }
+
+    .cart-payment-inner {
+        display: none;
+    }
+
+    .mini-payment-inner p {
+        font-weight: 400;
+        font-size: 14px;
+        display: inline-block;
+        margin: 0;
+    }
+
+    .mini-payment-inner span {
+        font-weight: 400;
+        font-size: 14px;
+        color: #979797;
+    }
+
+    .mini-info-btn {
+        width: 288px;
+        height: 32px;
+        border: 1px solid #EDEDED;
+        color: #1D1D1B;
+        font-size: 13px;
+        margin: 0 auto;
+        background-color: white;
+        margin: 0 0px 16px 0;
+    }
+
+    .payment-total-info span {
+        font-weight: 400;
+        font-size: 14px;
+        color: #979797;
+    }
+
+    .payment-total-info p {
+        font-weight: 400;
+        font-size: 14px;
+        display: inline-block;
+        margin: 0;
+    }
+
+    .payment-total-info {
+        padding: 18px 16px;
+    }
+
+    .payment-total-info span {
+        margin-right: 78px;
+    }
+
+    .payment-total-info p {
+        margin-bottom: 16px;
+    }
+
+    .hr {
+        width: 290px;
+    }
+
+}

@@ -1,0 +1,39 @@
+.summer-title {
+    font-weight: 500;
+    font-size: 24px;
+    color: #393939;
+    padding: 32px 0 18px 0;
+    margin: 0;
+}
+
+.css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background-color: #1D1D1B !important;
+    color: white !important;
+    border-radius: 0;
+}
+
+.summer-pagination {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 25px 49px 0;
+}
+
+@media screen and (max-width: 321px) {
+    .summer-title {
+        font-weight: 500;
+        font-size: 18px;
+        color: #393939;
+        padding: 24px 0 18px 0;
+        margin: 0;
+    }
+
+    .summer-pagination {
+        justify-content: center;
+    }
+
+    .summer-pagination {
+        display: flex;
+        justify-content: flex-end;
+        padding: 16px 11px 32px 0;
+    }
+}

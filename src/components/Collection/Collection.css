@@ -1,0 +1,44 @@
+.css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background-color: #1D1D1B !important;
+    color: white !important;
+    border-radius: 0;
+}
+
+.collection-main-title {
+    font-weight: 500;
+    font-size: 24px;
+    padding: 32px 0 18px 0;
+    margin: 0;
+    color: "#393939"
+}
+
+.collection-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.colelction-card-div {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.collection-pagination {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 25px 49px 0;
+}
+
+
+@media screen and (max-width: 321px) {
+    .collection-card-div {
+        margin-right: 0px;
+    }
+
+    .collection-main-title {
+        font-weight: 500;
+        font-size: 18px;
+        padding: 24px 0 16px 0;
+        margin: 0;
+    }
+
+}

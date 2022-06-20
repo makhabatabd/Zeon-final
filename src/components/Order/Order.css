@@ -1,0 +1,211 @@
+.dialog-inner {
+    padding: 12px 0px;
+    color: #808080;
+}
+
+.dialog-inner h2 {
+    font-weight: 600;
+    font-size: 20px;
+    color: #393939;
+    margin: 0 0 24px 0;
+}
+
+.order-label {
+    font-weight: 500;
+    font-size: 13px;
+    margin: 0 0 4px 0;
+}
+
+.order-input {
+    width: 417px;
+    height: 44px;
+    border: 1px solid #E7E7E7;
+    margin-bottom: 12px;
+    padding-left: 10px;
+}
+
+.order-input::placeholder {
+    color: #D0D0D0;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.order-button {
+    width: 430px;
+    height: 44px;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+        #1D1D1B;
+    border: none;
+    outline: none;
+    color: white;
+    margin: 32px 0 0 0;
+}
+
+.label {
+    font-weight: 500;
+    font-size: 15px;
+    color: #393939;
+    margin: 6px 0 0px 8px;
+}
+
+.phone-input {
+    width: 427px;
+    height: 44px;
+    border: 1px solid #E7E7E7;
+}
+
+.PhoneInputCountryIcon--border {
+    box-shadow: none;
+    margin-left: 10px;
+}
+
+.PhoneInputCountryIconImg {
+    border-radius: 3px;
+}
+
+.PhoneInputInput {
+    border: none;
+    outline: none;
+    margin: 0;
+    box-shadow: none;
+}
+
+.PhoneInputInput::placeholder {
+    color: #D0D0D0;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.order-checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    border: 1px solid #D0D0D0;
+}
+
+[type="checkbox"] {
+    vertical-align: middle;
+}
+
+input[type=email]:invalid {
+    border: 1px solid red;
+}
+
+input[type="email"]:invalid~label {
+    color: red;
+}
+
+.email-label {
+    font-weight: 500;
+    font-size: 13px;
+    position: absolute;
+    top: 33.5%;
+    left: 5%;
+}
+
+.email-input {
+    width: 417px;
+    height: 44px;
+    border: 1px solid #E7E7E7;
+    margin-bottom: -6px;
+    margin-top: 23px;
+    position: relative;
+    padding-left: 10px;
+
+}
+
+.email-input::placeholder {
+    color: #D0D0D0;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.active-button {
+    width: 430px;
+    height: 44px;
+    background: #1D1D1B;
+    border: none;
+    outline: none;
+    color: white;
+    margin: 32px 0 0 0;
+}
+
+.css-1p49sq2-MuiPaper-root-MuiAlert-root {
+    position: absolute !important;
+    top: 2% !important;
+    left: 4% !important;
+    width: 260px !important;
+}
+
+.PhoneInputCountryIcon--border {
+    box-shadow: none;
+}
+
+
+input[type=checkbox] {
+    accent-color: #393939;
+}
+
+.cart-link {
+    font-size: 15px;
+}
+
+.phone-input::placeholder {
+    color: #D0D0D0;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.PhoneInputCountryIcon--border {
+    box-shadow: none !important;
+}
+
+@media screen and (max-width: 321px) {
+    .order-input {
+        width: 217px;
+    }
+
+    .phone-input {
+        width: 225px;
+    }
+
+    .email-input {
+        width: 217px;
+    }
+
+    .dialog-inner h2 {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .active-button {
+        width: 232px;
+    }
+
+    .order-button {
+        width: 232px;
+    }
+
+    .label {
+        font-size: 13px;
+    }
+
+    .cart-link {
+        display: inline-block;
+        font-size: 13px;
+        margin-left: 35px;
+        margin-top: -10px;
+    }
+
+    .email-label {
+        top: 31.3%;
+        left: 4%
+    }
+
+    .PhoneInputInput {
+        font-size: 12px;
+    }
+
+
+
+}

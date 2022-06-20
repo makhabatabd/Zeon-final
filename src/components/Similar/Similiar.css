@@ -1,0 +1,19 @@
+.similiar {
+    display: flex;
+    padding-bottom: 64px;
+}
+
+.similiar-table-cards {
+    display: none;
+}
+
+@media screen and (max-width: 321px) {
+    .similiar-table-cards {
+        display: block;
+        padding-bottom: 64px;
+    }
+
+    .similiar {
+        display: none;
+    }
+}

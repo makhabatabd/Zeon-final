@@ -1,0 +1,22 @@
+.new-card {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 64px;
+}
+
+.new-table-cards {
+    display: none;
+}
+
+@media screen and (max-width: 321px) {
+    .new-card {
+        display: none;
+    }
+
+    .new-table-cards {
+        display: block;
+        padding-bottom: 64px;
+
+    }
+
+}

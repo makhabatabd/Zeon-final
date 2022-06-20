@@ -1,0 +1,72 @@
+.blocks {
+    margin-bottom: 16px;
+}
+
+.main-order-div {
+    display: flex;
+}
+
+
+.order-payment {
+    width: 40%;
+    padding: 24px;
+    background-color: white;
+    height: 357px;
+    margin: 0 80px 20px 0;
+}
+
+
+.order-payment span {
+    font-weight: 400;
+    font-size: 14px;
+    color: #979797;
+}
+
+.order-payment p {
+    font-weight: 400;
+    font-size: 14px;
+    display: inline-block;
+    margin: 0;
+}
+
+.order-products {
+    width: 50%;
+}
+
+.product-image {
+    margin-right: 20px;
+    width: 112px;
+}
+
+
+@media screen and (max-width: 321px) {
+    .main-order-div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .order-products {
+        width: 100%;
+    }
+
+    .order-payment {
+        width: 83%;
+        height: 450px;
+    }
+
+    .order-payment span {
+        font-size: 12px;
+    }
+
+    .order-payment p {
+        font-size: 12px;
+    }
+
+    .cart-title {
+        font-size: 12px;
+    }
+
+    .product-image {
+        margin-right: 8px;
+    }
+}

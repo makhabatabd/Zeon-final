@@ -1,0 +1,38 @@
+.link {
+    text-decoration: none;
+    font-weight: 500 !important;
+    color: #393939 !important;
+    margin: 0 !important;
+    font-family: 'Montserrat',
+        sans-serif !important;
+    font-size: 14px;
+}
+
+.typo {
+    color: #979797;
+}
+
+.css-1wuw8dw-MuiBreadcrumbs-separator {
+    margin: 0 16px !important;
+}
+
+.css-1nb6h7e-MuiTypography-root {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+
+@media screen and (max-width: 321px) {
+    .breadcrumps {
+        font-size: 12px;
+    }
+
+    .typo {
+        margin-left: 12px;
+    }
+
+    .link {
+        margin-right: 12px;
+    }
+
+
+}

@@ -1,0 +1,120 @@
+.header-top {
+    margin: 9px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-lines {
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.header-top-left span {
+    margin-right: 24px;
+}
+
+.header-top-right span {
+    color: #979797;
+}
+
+.header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 9px 0;
+}
+
+.input-icon {
+    margin: 0 34px;
+    border: 1px solid #E0E0E0;
+    background-color: #F8F8F8;
+}
+
+.input-icon span {
+    position: absolute;
+}
+
+.icon {
+    padding: 5px 0 0px 625px;
+}
+
+.input-field {
+    width: 662px;
+    height: 44px;
+    border: 0.3px solid #F8F8F8;
+}
+
+.input-field::placeholder {
+    padding-left: 20px;
+}
+
+
+.header-extra-info {
+    display: flex;
+    align-items: center;
+    font-weight: 500px;
+    font-size: 15px;
+}
+
+.header-selected {
+    margin-right: 20px;
+    margin-left: 10px;
+    padding-right: 20px;
+    border-right: 1px solid #D3D3D3;
+}
+
+.header-cart {
+    margin-left: 10px;
+}
+
+
+.menu {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0;
+}
+
+.burger-list {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+
+.burger-top-left p {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.xs-search {
+    display: none;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+    padding: 5px 6px 2px 6px !important
+}
+
+@media screen and (max-width: 600px) {
+    .xs-search {
+        display: block
+    }
+
+    .search {
+        display: none;
+    }
+
+    .header-bottom {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 99px;
+    }
+
+    .header-bottom {
+        margin: 10.5px 0;
+    }
+
+}
