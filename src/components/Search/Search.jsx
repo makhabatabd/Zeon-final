@@ -80,7 +80,10 @@ const Search = () => {
                 {showInput ? <><div className='small-search-inputs'>
                     <input onKeyDown={(e)=>keyHandler(e)} onBlur={() => setTimeout(() => setShow(false), 300)} onClick={() => inputHandler()} ref={ref} onChange={handleFilter} placeholder='Поиск' type="text" />
                     <div className='small-search-icon'>
-                        <SearchIcon onClick={handleNavigate}/>
+                        <SearchIcon onClick={() => {
+                            handleNavigate()
+                            setShowInput(false)
+                        }}/>
                     </div>
                 </div></> : null}
             </div>
@@ -88,7 +91,7 @@ const Search = () => {
                 <div className='data-result-outter'>
                 <div className="data-result">
                     {filteredData.map((value, index) => (
-                        <SearchCard value={value} key={index} clearInput={clearInput} />
+                        <SearchCard value={value} key={index} clearInput={clearInput} setShowInput={setShowInput} />
                     ))}
                 </div>
                 </div>

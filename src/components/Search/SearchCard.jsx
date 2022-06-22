@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SearchCard = ({ value, clearInput }) => {
+const SearchCard = ({ value, clearInput, setShowInput }) => {
     const navigate = useNavigate()
     const handleDetails = () => {
             if (value.type == "summer") {
@@ -15,6 +15,7 @@ const SearchCard = ({ value, clearInput }) => {
     function find() {
         handleDetails()
         clearInput()
+        setShowInput(false)
     }
 
     return (

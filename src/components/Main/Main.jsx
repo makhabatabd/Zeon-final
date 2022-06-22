@@ -116,6 +116,8 @@ const Main = () => {
         setScreenWidth(window.innerWidth)
     }, [screenWidth])
 
+    const blockInvalidChar = e => ['e', 'E', '+', '-', '.'].includes(e.key) && e.preventDefault();
+
 
     return (
         <div className='main'>
@@ -244,10 +246,15 @@ const Main = () => {
                 <input  onChange={(e)=>setName(e.target.value)} className='input1 input' type="text" placeholder='Как к Вам обращаться?'/>
                 </Typography>
                 <Typography>
-                    <input onChange={(e)=>setPhone(e.target.value)} className='input2 input' type="number" placeholder='Номер телефона'/>
+                    <input 
+                                onChange={(e) => setPhone(e.target.value)}
+                                className='input2 input'
+                                type="number"
+                                onKeyDown={blockInvalidChar}
+                                placeholder='Номер телефона' />
                 </Typography>
                     </DialogContent>
-                    {name && phone ? <button className='dialog-button-active' onClick={() => {
+                    {name && phone.length > 3 ? <button className='dialog-button-active' onClick={() => {
                         setName("")
                         setPhone("")
                         setSuccess(true)
