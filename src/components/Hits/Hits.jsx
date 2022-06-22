@@ -10,6 +10,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { Link } from "react-router-dom";
 import Color from '../Colors/Color';
 import { authContext } from '../../context/authContext';
+import { summerContext } from '../../context/SummerCollection';
 
 
 const Hits = ({ item }) => {
@@ -19,6 +20,7 @@ const Hits = ({ item }) => {
     const [inFav, setInFav] = useState(isProdInFav(item.id, currentUser))
     const [pic, setPic] = useState(item.img)
     const [hover, setHover] = useState("hover")
+    const { getUser } = useContext(summerContext)
 
     const handleMouse = (event) => {
         var mouseX = event.nativeEvent.offsetX; 
@@ -45,8 +47,13 @@ const Hits = ({ item }) => {
         setPic(item.img)
         setHover("hover")
     }
+    
+    useEffect(() => {
+    setInFav(isProdInFav(item.id, currentUser))
+    }, [isProdInFav]);
+    
     return (
-        <Card square={true} onMouseMove = {(e) => handleMouse(e)} onMouseLeave={()=>handleLeave()}> 
+        <Card square={true}> 
             <CardActionArea>
                 {currentUser ?
                 inFav ? (
@@ -60,7 +67,7 @@ const Hits = ({ item }) => {
               />
             ) : (
                 <FavoriteBorderIcon
-                style={{ color: "white", width:"24px" }}
+                style={{ color: "white" }}
                 className='favorite-hover'
                 onClick={() => {
                   addDelToFav(item);
@@ -68,13 +75,13 @@ const Hits = ({ item }) => {
                 }}
               />
                 ) : <Link to="/auth"><FavoriteBorderIcon
-                style={{ color: "white", width:"24px" }}
+                style={{ color: "white"}}
                 className='favorite-hover'
               />
               </Link> }
             {item.discount ? <div className='red-discount'><span>{item.discount}%</span></div>: null}
             <Link to={`/hitdetails/${item.id}`}>
-                <CardMedia
+                <CardMedia onMouseMove = {(e) => handleMouse(e)} onMouseLeave={()=>handleLeave()}
                     component="img"
                     height="140"
                     image={pic}

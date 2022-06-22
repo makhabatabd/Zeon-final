@@ -9,13 +9,16 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Color from '../Colors/Color';
+import { authContext } from '../../context/authContext';
 import { summerContext } from '../../context/SummerCollection';
 
 const SimiliarCard = ({ item }) => {
     const { addDelToFav, isProdInFav } = useContext(favoriteContext)
-    const [inFav, setInFav] = useState(isProdInFav(item.id))
+    const { currentUser} = useContext(authContext);
+    const [inFav, setInFav] = useState(isProdInFav(item.id, currentUser))
     const discount = Math.ceil(item.price - (item.price * item.discount / 100))
     const navigate = useNavigate()
+    const { getUser } = useContext(summerContext)
      const [pic, setPic] = useState(item.img)
     const [hover, setHover] = useState("sm-hover")
     const handleMouse = (event) => {
@@ -43,32 +46,46 @@ const SimiliarCard = ({ item }) => {
         setPic(item.img)
         setHover("hover")
     }
+
+    useEffect(() => {
+        getUser()
+    }, [currentUser])
+
+     useEffect(() => {
+    setInFav(isProdInFav(item.id, currentUser))
+    }, [isProdInFav]);
     return (
         <div className='sm-card-outter'>
-        <Card onMouseMove={(e) => handleMouse(e)} onMouseLeave={() => handleLeave()} sx={{width:"226px", height: "435px", border:"none", backgroundColor:"transparent", color:"rgba(0, 0, 0, 0)", boxShadow:"none"}} key={item.id} square={true}>
+        <Card sx={{width:"226px", height: "435px", border:"none", backgroundColor:"transparent", color:"rgba(0, 0, 0, 0)", boxShadow:"none"}} key={item.id} square={true}>
             <CardActionArea>
-            {inFav ? (
-                <FavoriteIcon
-                className='favorite'
-                style={{ color: "red" }}
-                onClick={() => {
-                addDelToFav(item);
-                setInFav(isProdInFav(item.id));
-                }}
-            />
-            ) : (
-                <FavoriteBorderIcon
-                style={{ color: "white" }}
-                className='sm-favorite-hover'
-                onClick={() => {
-                addDelToFav(item);
-                setInFav(isProdInFav(item.id));
-                }}
-            />
-                )}
+             {currentUser ?
+                    inFav ? (
+                    <FavoriteIcon
+                    className='sm-favorite'
+                    style={{ color: "red" }}
+                    onClick={() => {
+                    addDelToFav(item);
+                    setInFav(isProdInFav(item.id, currentUser));
+                    }}
+                />
+                ) : (
+                    <FavoriteBorderIcon
+                    style={{ color: "white"}}
+                    className='sm-favorite-hover'
+                    onClick={() => {
+                    addDelToFav(item);
+                    setInFav(isProdInFav(item.id, currentUser));
+                    }}
+                />
+                    ) : <Link to="/auth"><FavoriteBorderIcon
+                    style={{ color: "white" }}
+                    className='sm-favorite-hover'
+                />
+                </Link> }
             {item.discount ? <div className='red-discount'><span>{item.discount}%</span></div>: null}
             <Link to={`/details/${item.id}`} >
-                <CardMedia onClick={()=>navigate(`/details/${item.id}`)} sx={{height:"332px"}}
+                    <CardMedia onClick={() => navigate(`/details/${item.id}`)} sx={{ height: "332px" }}
+                    onMouseMove = {(e) => handleMouse(e)} onMouseLeave={()=>handleLeave()}
                     component="img"
                     height="140"
                     image={pic}
@@ -88,7 +105,7 @@ const SimiliarCard = ({ item }) => {
                 <Typography variant="body2" color="text.secondary">
                         Размер : {item.size}
                 </Typography>
-                    <Color/>
+                    <Color id={item.id}/>
                 </CardContent>
             </CardActionArea>
             </Card>

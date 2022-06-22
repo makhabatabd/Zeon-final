@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -9,11 +9,15 @@ import { favoriteContext} from '../../context/favoriteContext';
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { Link, useNavigate } from "react-router-dom";
 import Color from '../Colors/Color';
+import { authContext } from '../../context/authContext';
+import { summerContext } from '../../context/SummerCollection';
 
 const SearchPageCard = ({ item }) => {
     const discount = Math.ceil(item.price - (item.price * item.discount / 100))
     const { addDelToFav, isProdInFav } = useContext(favoriteContext)
-    const [inFav, setInFav] = useState(isProdInFav(item.id))
+    const { currentUser } = useContext(authContext);
+    const { getUser } = useContext(summerContext)
+    const [inFav, setInFav] = useState(isProdInFav(item.id, currentUser))
     const [pic, setPic] = useState(item.img)
     const [hover, setHover] = useState("hover")
     const navigate = useNavigate()
@@ -52,30 +56,44 @@ const SearchPageCard = ({ item }) => {
         setPic(item.img)
         setHover("hover")
     }
+
+      useEffect(() => {
+    getUser()
+  }, [currentUser])
+
+    useEffect(() => {
+    setInFav(isProdInFav(item.id, currentUser))
+    }, [isProdInFav]);
     return (
-            <Card square={true} onMouseMove = {(e) => handleMouse(e)} onMouseLeave={()=>handleLeave()}> 
+            <Card square={true}> 
                 <CardActionArea>
-                    {inFav ? (
-                    <FavoriteIcon
-                    className='favorite'
-                    style={{ color: "red" }}
-                    onClick={() => {
-                    addDelToFav(item);
-                    setInFav(isProdInFav(item.id));
-                    }}
-                />
-                ) : (
-                    <FavoriteBorderIcon
-                    style={{ color: "white", width:"24px" }}
-                    className='favorite-hover'
-                    onClick={() => {
-                    addDelToFav(item);
-                    setInFav(isProdInFav(item.id));
-                    }}
-                />
-                    )}
+                    {currentUser ?
+                inFav ? (
+                <FavoriteIcon
+                className='favorite'
+                style={{ color: "red" }}
+                onClick={() => {
+                  addDelToFav(item);
+                  setInFav(isProdInFav(item.id, currentUser));
+                }}
+              />
+            ) : (
+                <FavoriteBorderIcon
+                style={{ color: "white" }}
+                className='favorite-hover'
+                onClick={() => {
+                  addDelToFav(item);
+                  setInFav(isProdInFav(item.id, currentUser));
+                }}
+              />
+                ) : <Link to="/auth"><FavoriteBorderIcon
+                style={{ color: "white"}}
+                className='favorite-hover'
+              />
+              </Link> }
                 {item.discount ? <div className='red-discount'><span>{item.discount}%</span></div>: null}
-                        <CardMedia
+                    <CardMedia
+                        onMouseMove = {(e) => handleMouse(e)} onMouseLeave={()=>handleLeave()}
                         onClick={handleDetails}
                         component="img"
                         height="140"
@@ -95,7 +113,7 @@ const SearchPageCard = ({ item }) => {
                 <Typography variant="body2" color="text.secondary">
                     Размер : {item.size}
                 </Typography>
-                <Color/>
+                <Color id={item.id}/>
                 </CardContent>
                 </CardActionArea>
             </Card>

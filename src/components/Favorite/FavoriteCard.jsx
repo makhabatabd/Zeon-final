@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Color from "../Colors/Color";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Card from '@mui/material/Card';
@@ -11,6 +11,8 @@ import { useNavigate } from 'react-router-dom';
 
 const FavoriteCard = ({ item1, deleteProdInFav }) => {
     const navigate = useNavigate()
+    const [pic, setPic] = useState(item1.item.img)
+    const [hover, setHover] = useState("hover")
     const handleDetails = () => {
             if (item1.item.type == "summer") {
                 navigate(`/details/${item1.item.id}`)
@@ -19,7 +21,32 @@ const FavoriteCard = ({ item1, deleteProdInFav }) => {
             } else if (item1.item.type == "brandnew") {
                 navigate(`/newdetails/${item1.item.id}`)
             }
-        }
+    }
+    const handleMouse = (event) => {
+        var mouseX = event.nativeEvent.offsetX; 
+        let cardWidth = event.target.clientWidth
+        let specWidth = Math.ceil(cardWidth / 4)
+
+        if (mouseX > 1 && mouseX < specWidth) {
+            setPic(item1.item.img)
+            setHover("hover-1")
+        }if (mouseX > specWidth && mouseX < specWidth * 2) {
+            setPic(item1.item.img2)
+            setHover("hover-2")
+        } else if (
+            mouseX > specWidth * 2 && mouseX < specWidth * 3) {
+            setPic(item1.item.img3)
+            setHover("hover-3")
+        } else if (
+            mouseX > specWidth * 3 && mouseX < specWidth * 4) {
+            setPic(item1.item.img4)
+            setHover("hover-4")
+             }
+    }
+    const handleLeave = () => {
+        setPic(item1.item.img)
+        setHover("hover")
+    }
     return (
         <Card key={item1.item.id} square={true}>
             <CardActionArea>
@@ -27,14 +54,16 @@ const FavoriteCard = ({ item1, deleteProdInFav }) => {
                     className='favorite'
                     style={{ color: "red", position: "absolute", top: "2%", right: "5%"}}
                     onClick={() => {deleteProdInFav(item1.item.id)}}/>
-                    <CardMedia
+                <CardMedia
+                        onMouseMove = {(e) => handleMouse(e)} onMouseLeave={()=>handleLeave()}
                         className="photos"
                         height="140"
                         component="img"
-                        image={item1.item.img}
+                        image={pic}
                         alt="fav image"
                         onClick={handleDetails}
-                        />
+                />
+                <div className={hover}></div>
                     <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                             {item1.item.title}

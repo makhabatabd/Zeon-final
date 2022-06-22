@@ -68,7 +68,7 @@ const Random = ({ item }) => {
 
     return (
         <div className='sm-card-outter'>
-        <Card className='sm-card' onMouseMove={(e) => handleMouse(e)} onMouseLeave={() => handleLeave()} style={cardStyle} sx={{ height: "430px" }} key={item.id} square={true}>
+        <Card className='sm-card' style={cardStyle} sx={{ height: "430px" }} key={item.id} square={true}>
             <CardActionArea>
                  {currentUser ?
                 inFav ? (
@@ -82,7 +82,7 @@ const Random = ({ item }) => {
               />
             ) : (
                 <FavoriteBorderIcon
-                style={{ color: "white", width:"24px" }}
+                style={{ color: "white" }}
                 className='sm-favorite-hover'
                 onClick={() => {
                   addDelToFav(item);
@@ -90,11 +90,12 @@ const Random = ({ item }) => {
                 }}
               />
                 ) : <Link to="/auth"><FavoriteBorderIcon
-                style={{ color: "white", width:"24px" }}
+                style={{ color: "white"}}
                 className='sm-favorite-hover'
               />
               </Link> }
                     <CardMedia
+                        onMouseMove={(e) => handleMouse(e)} onMouseLeave={() => handleLeave()}
                         onClick={handleDetails}
                     sx={{height:"332px"}}
                         className="photos"

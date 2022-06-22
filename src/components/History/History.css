@@ -38,11 +38,23 @@
     width: 112px;
 }
 
+.no-history {
+    padding-bottom: 438px;
+}
+
+.no-history h1 {
+    font-size: 20px;
+}
+
 
 @media screen and (max-width: 321px) {
     .main-order-div {
         display: flex;
         flex-direction: column;
+    }
+
+    .no-history {
+        padding-bottom: 172px;
     }
 
     .order-products {

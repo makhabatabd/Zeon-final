@@ -79,8 +79,10 @@ const History = () => {
                                 </div>
                             ))}
                         </div>
-                    ) : 
-                        <h1>У вас пока нет покупок</h1>
+                ) : 
+                        <div className='no-history'>
+                            <h1>У вас пока нет покупок</h1>
+                        </div>
                 } 
             </div>
             

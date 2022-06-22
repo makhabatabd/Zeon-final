@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Card from '@mui/material/Card';
@@ -44,8 +44,13 @@ const BrandNew = ({ item }) => {
         setPic(item.img)
         setHover("hover")
     }
+
+    useEffect(() => {
+    setInFav(isProdInFav(item.id, currentUser))
+    }, [isProdInFav]);
+
     return (
-      <Card square={true} onMouseMove={(e) => handleMouse(e)} onMouseLeave={() => handleLeave()}>
+      <Card square={true}>
             <CardActionArea>
                {currentUser ?
                 inFav ? (
@@ -59,7 +64,7 @@ const BrandNew = ({ item }) => {
               />
             ) : (
                 <FavoriteBorderIcon
-                style={{ color: "white", width:"24px" }}
+                style={{ color: "white" }}
                 className='favorite-hover'
                 onClick={() => {
                   addDelToFav(item);
@@ -67,13 +72,14 @@ const BrandNew = ({ item }) => {
                 }}
               />
                 ) : <Link to="/auth"><FavoriteBorderIcon
-                style={{ color: "white", width:"24px" }}
+                style={{ color: "white"}}
                 className='favorite-hover'
               />
               </Link> }
                 {item.discount ? <div className='red-discount'><span>{item.discount}%</span></div>: null}
                 <Link to={`/newdetails/${item.id}`}>
                 <CardMedia
+                    onMouseMove = {(e) => handleMouse(e)} onMouseLeave={()=>handleLeave()}
                     component="img"
                     height="140"
                     image={pic}

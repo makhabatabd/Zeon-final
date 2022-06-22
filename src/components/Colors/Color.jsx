@@ -18,7 +18,12 @@ const Color = ({id}) => {
     }, [])
     useEffect(() => {
         getUser()
-        }, [currentUser])
+    }, [currentUser])
+    useEffect(() => {
+    setInCart(isProd(id))
+    }, [isProd]);
+    
+    
     return (
         <div>
             <div className='colorful-circles'>

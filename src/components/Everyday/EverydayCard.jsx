@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
@@ -46,8 +46,11 @@ const EverydayCard = ({ item }) => {
         setPic(item.img)
         setHover("hover")
     }
+        useEffect(() => {
+    setInFav(isProdInFav(item.id, currentUser))
+    }, [isProdInFav]);
     return (
-        <Card key={item.id} square={true} onMouseMove = {(e) => handleMouse(e)} onMouseLeave={()=>handleLeave()}>
+        <Card key={item.id} square={true}>
             <CardActionArea>
                {currentUser ?
                 inFav ? (
@@ -61,7 +64,7 @@ const EverydayCard = ({ item }) => {
               />
             ) : (
                 <FavoriteBorderIcon
-                style={{ color: "white", width:"24px" }}
+                style={{ color: "white"}}
                 className='favorite-hover'
                 onClick={() => {
                   addDelToFav(item);
@@ -69,13 +72,14 @@ const EverydayCard = ({ item }) => {
                 }}
               />
                 ) : <Link to="/auth"><FavoriteBorderIcon
-                style={{ color: "white", width:"24px" }}
+                style={{ color: "white" }}
                 className='favorite-hover'
               />
               </Link> }
             {item.discount ? <div className='red-discount'><span>{item.discount}%</span></div>: null}
             <Link to={`/details/${item.id}`} >
                 <CardMedia
+                    onMouseMove={(e) => handleMouse(e)} onMouseLeave={() => handleLeave()}
                     component="img"
                     height="140"
                     image={pic}

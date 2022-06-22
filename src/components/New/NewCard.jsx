@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Card from '@mui/material/Card';
@@ -46,6 +46,10 @@ const NewCard = ({ item }) => {
         setHover("hover")
     }
 
+     useEffect(() => {
+    setInFav(isProdInFav(item.id, currentUser))
+    }, [isProdInFav]);
+
     const cardStyle = {
         width: "226px", 
         marginRight: "8px", 
@@ -56,12 +60,12 @@ const NewCard = ({ item }) => {
     }
     return (
          <div className='sm-card-outter'>
-            <Card className='sm-card' onMouseMove={(e) => handleMouse(e)} onMouseLeave={() => handleLeave()} style={cardStyle} sx={{ height: "430px" }} key={item.id} square={true}>
+            <Card className='sm-card' style={cardStyle} sx={{ height: "435px" }} key={item.id} square={true}>
                 <CardActionArea>
                     {currentUser ?
                     inFav ? (
                     <FavoriteIcon
-                    className='favorite'
+                    className='sm-favorite'
                     style={{ color: "red" }}
                     onClick={() => {
                     addDelToFav(item);
@@ -70,7 +74,7 @@ const NewCard = ({ item }) => {
                 />
                 ) : (
                     <FavoriteBorderIcon
-                    style={{ color: "white", width:"24px" }}
+                    style={{ color: "white"}}
                     className='sm-favorite-hover'
                     onClick={() => {
                     addDelToFav(item);
@@ -78,12 +82,13 @@ const NewCard = ({ item }) => {
                     }}
                 />
                     ) : <Link to="/auth"><FavoriteBorderIcon
-                    style={{ color: "white", width:"24px" }}
+                    style={{ color: "white" }}
                     className='sm-favorite-hover'
                 />
                 </Link> }
                 {item.discount ? <div className='red-discount'><span>{item.discount}%</span></div>: null}
                     <CardMedia
+                        onMouseMove={(e) => handleMouse(e)} onMouseLeave={() => handleLeave()}
                         sx={{height:"332px"}}
                     component="img"
                     image={pic}

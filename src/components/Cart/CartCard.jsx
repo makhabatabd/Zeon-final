@@ -23,8 +23,8 @@ const CartCard = ({ item }) => {
     }
 
     async function decrementCount () {
-    let newCart = users.carts.map((el) => {
-        if (el.id === item.id && el.color === item.color) {
+        let newCart = users.carts.map((el) => {
+        if (el.id === item.id && el.color === item.color && el.count > 1) {
             el.count -= 1
         }
         return el

@@ -13,6 +13,8 @@ import Random from "../Random/Random";
 import { makeStyles } from "@material-ui/styles";
 import axios from 'axios';
 import Pagination from '@mui/material/Pagination';
+import { summerContext } from '../../context/SummerCollection';
+import { authContext } from '../../context/authContext';
 
 const useStyles = makeStyles(() => ({
   ul: {
@@ -55,6 +57,7 @@ const SearchPage = () => {
 useEffect(() => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }, [page])
+  
 
         useEffect(() => {
       axios.get(`http://localhost:8000/summer?_limit=2`)

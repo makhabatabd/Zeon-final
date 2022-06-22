@@ -248,7 +248,8 @@ const Main = () => {
                 </Typography>
                     </DialogContent>
                     {name && phone ? <button className='dialog-button-active' onClick={() => {
-                        setName("") && setPhone("")
+                        setName("")
+                        setPhone("")
                         setSuccess(true)
                         setOpenDialog(false) 
                     }}> Заказать звонок </button>
