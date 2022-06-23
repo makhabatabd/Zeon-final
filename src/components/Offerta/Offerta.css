@@ -24,6 +24,8 @@
 .offerta-text p {
     font-weight: 300;
     font-size: 14px;
+    line-height: 165%;
+    color: #5B5B5B;
 }
 
 .offerta-first-part {

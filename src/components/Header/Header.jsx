@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { headerContext } from '../../context/HeaderContext';
 import "./Header.css"
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { Link, useNavigate } from 'react-router-dom';
 import Hidden from '@mui/material/Hidden';
 import IconButton from '@mui/material/IconButton'
@@ -11,7 +10,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import Badge from '@mui/material/Badge';
 import { favoriteContext } from '../../context/favoriteContext';
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { cartContext } from '../../context/CartContext';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import Typography from '@mui/material/Typography';
@@ -52,6 +50,8 @@ const Header = () => {
     })
     const length = fav.products?.length
 
+    const blockInvalidChar = e => ['e', 'E', '+', '-', '.'].includes(e.key) && e.preventDefault();
+
     return (
         <div>
             {header.map((item) => (
@@ -83,7 +83,7 @@ const Header = () => {
                             <div className='header-bottom'>
                                 <Hidden smUp>
                                     <div style={{border:"1px solid #E0E0E0"}} onClick={() => setOpen(true)}>
-                                    <MenuIcon style={{padding:"6px"}}/>
+                                    <MenuIcon style={{padding:"6px 6px 1px 6px"}}/>
                                     </div>
                                 </Hidden>
                                 <Link style={{textDecoration: 'none'}} to={'/'}>
@@ -146,7 +146,7 @@ const Header = () => {
                         onOpen={() => setOpen(true)}
                         onClose={() => setOpen(false)}
                     >
-                        <div onClick={()=>setOpen(false)} classname="burger-list" style={{
+                        <div onClick={()=>setOpen(false)} className="burger-list" style={{
                             display: "flex", flexDirection: "column", justifyContent: "space-between", height:"100%", padding: "16px", width: "250px"}}>
                             <div>
                                 <div style={{display: "flex", justifyContent: "space-between"}}>
@@ -206,8 +206,11 @@ const Header = () => {
             >
                 <div className='call-dialog-inner'>
                     <button className='delete'><CloseIcon onClick={() => {
-                            setOpenDialog(false)
-                            setOpen(false)
+                        setOpenDialog(false)
+                        setOpen(false)
+                        setName("")
+                        setPhone("")
+                        setSuccess(false)
                         }} /></button>
                 <DialogContent>
                 <h1 className='dialog-title'>Если у Вас остались вопросы</h1>
@@ -219,8 +222,11 @@ const Header = () => {
                     <input onChange={(e)=>setPhone(e.target.value)} className='input2 input' type="number" placeholder='Номер телефона'/>
                 </Typography>
                     </DialogContent>
-                {name && phone ? <button className='dialog-button-active' onClick={() => {
-                        setName("") && setPhone("")
+                    {name && phone.length > 3 ? <button className='dialog-button-active'
+                        onKeyDown={blockInvalidChar}
+                        onClick={() => {
+                        setName("")
+                        setPhone("")
                         setSuccess(true)
                         setOpenDialog(false) 
                     }}> Заказать звонок </button>

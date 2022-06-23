@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { allContext } from '../../context/AllContext';
 import SearchIcon from '@mui/icons-material/Search';
 import "./Search.css"
@@ -11,7 +11,8 @@ import SearchCard from './SearchCard';
 
 const Search = () => {
     const { getAllProducts, data } = useContext(allContext)
-    const [showInput, setShowInput] =useState(false)
+    const [showInput, setShowInput] = useState(false)
+    const { pathname } = useLocation()
     useEffect(() => {
         getAllProducts()
     }, [])
@@ -42,6 +43,14 @@ const Search = () => {
         setSearchValue("");
         ref.current.value = ""
     };
+
+    useEffect(() => {
+        setShowInput(false)
+        if (window.innerWidth > 321) {
+            clearInput()
+        }
+     }, [pathname])
+
     
     const handleNavigate = (e) => {
         navigate(`/searchpage/${searchValue}`)

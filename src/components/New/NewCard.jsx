@@ -96,13 +96,12 @@ const NewCard = ({ item }) => {
                         onClick={()=>navigate(`/newd/${item.id}`)}
                     />
                     <div className={hover}></div>
-                <CardContent>
+                <CardContent sx={{padding:0}}>
                 {item.discount ?
-                    <div style={{marginBottom:"10px"}}><span style={{marginRight:"8px"}} className='price-discount'>{item.price.toLocaleString().replace(',', ' ')} p</span><span className='discount'>{discount.toLocaleString().replace(',', ' ')} p</span></div> :  
-                    <Typography className='hit-price' variant="body2" color="text.secondary"><span className='discount'>{item.price.toLocaleString().replace(',', ' ')} p</span>
-                    </Typography>
+                <div><span style={{marginRight:"8px"}} className='price-discount'>{item.price.toLocaleString().replace(',', ' ')} p</span><span className='discount'>{discount.toLocaleString().replace(',', ' ')} p</span></div> :  
+                <span className='discount'>{item.price.toLocaleString().replace(',', ' ')} p</span>
                 }  
-                <Typography sx={{fontSize:"14px", fontWeight: "500", color: "#393939", marign:"8px 0 6px 0", fontFamily: "'Montserrat', sans-serif"}} gutterBottom variant="h5" component="div">
+                <Typography sx={{margin: "6px 0 6px 0", color:"#393939", fontSize: "14px", fontWeight:"500", fontFamily: "Montserrat"}} gutterBottom variant="h5" component="div">
                     {item.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">

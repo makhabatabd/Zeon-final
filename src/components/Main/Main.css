@@ -518,8 +518,9 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 
     .css-1t1j96h-MuiPaper-root-MuiDialog-paper {
-        height: 300px;
-        width: 262px !important;
+        height: 293px;
+        width: 295px !important;
+        margin: 0px !important;
     }
 
     .css-ypiqx9-MuiDialogContent-root {
@@ -542,7 +543,7 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 
     .input {
-        width: 161px;
+        width: 208px;
     }
 
     .input::placeholder {
@@ -550,17 +551,17 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 
     .dialog-button {
-        width: 218px;
+        width: 264px;
         margin: 0px 0 0 0px;
     }
 
     .dialog-button-active {
-        width: 218px;
-        margin: -10px 0 0 0px;
+        width: 264px;
+        margin: 0px 0 0 0px;
     }
 
     .call-dialog-inner {
-        padding: 20px 15px;
+        padding: 10px 15px;
     }
 
     .success-button {
@@ -570,6 +571,7 @@ input[type="number"]::-webkit-inner-spin-button {
     .css-62v84k-MuiPaper-root-MuiDialog-paper {
         width: 288px !important;
         height: 232px !important;
+        margin: 0 !important;
     }
 
     .css-1vqzrnv-MuiPaper-root-MuiCard-root {
@@ -624,5 +626,13 @@ input[type="number"]::-webkit-inner-spin-button {
 
     .hit-main-title {
         margin: 22px 0 16px 0;
+    }
+
+    .success-text {
+        margin: 0 8px 16px 8px;
+    }
+
+    .success-button {
+        width: 260px;
     }
 }

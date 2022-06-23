@@ -162,15 +162,15 @@ input[type=checkbox] {
 
 @media screen and (max-width: 321px) {
     .order-input {
-        width: 217px;
+        width: 237px;
     }
 
     .phone-input {
-        width: 225px;
+        width: 250px;
     }
 
     .email-input {
-        width: 217px;
+        width: 237px;
     }
 
     .dialog-inner h2 {
@@ -179,11 +179,11 @@ input[type=checkbox] {
     }
 
     .active-button {
-        width: 232px;
+        width: 252px;
     }
 
     .order-button {
-        width: 232px;
+        width: 252px;
     }
 
     .label {
@@ -198,8 +198,8 @@ input[type=checkbox] {
     }
 
     .email-label {
-        top: 31.3%;
-        left: 4%
+        top: 32.3%;
+        left: 6%
     }
 
     .PhoneInputInput {

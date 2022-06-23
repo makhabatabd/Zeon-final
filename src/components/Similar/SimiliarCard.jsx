@@ -93,15 +93,14 @@ const SimiliarCard = ({ item }) => {
                     />
                     <div className={hover}></div>
             </Link>
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                        {item.title}
-                    </Typography>
+                <CardContent sx={{padding:0}}>
                 {item.discount ?
-                <div><span className='discount'>{discount.toLocaleString().replace(',', ' ')} p</span><span className='price-discount'>{item.price.toLocaleString().replace(',', ' ')} p</span></div> :  
-                <Typography className='hit-price' variant="body2" color="text.secondary"><span className='discount'>{item.price.toLocaleString().replace(',', ' ')} p</span>
-                </Typography>
+                <div><span style={{marginRight:"8px"}} className='price-discount'>{item.price.toLocaleString().replace(',', ' ')} p</span><span className='discount'>{discount.toLocaleString().replace(',', ' ')} p</span></div> :  
+                <span className='discount'>{item.price.toLocaleString().replace(',', ' ')} p</span>
                 }  
+                <Typography sx={{margin: "6px 0 6px 0", color:"#393939", fontSize: "14px", fontWeight:"500", fontFamily: "Montserrat"}} gutterBottom variant="h5" component="div">
+                    {item.title}
+                </Typography>
                 <Typography variant="body2" color="text.secondary">
                         Размер : {item.size}
                 </Typography>

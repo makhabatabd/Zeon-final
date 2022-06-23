@@ -182,7 +182,7 @@ const DetailsCard = ({ item, colors }) => {
                                         {currentUser ?
                                             inFav ? (
                                         <FavoriteIcon
-                                            style={{ color: "white", padding:"10px", width:"30px", height:"37px" }}
+                                            style={{ color: "white", padding:"8px", fontSize:"28px"}}
                                             onClick={() => {
                                                 addDelToFav(item);
                                                 setInFav(isProdInFav(item.id, currentUser));
@@ -190,7 +190,7 @@ const DetailsCard = ({ item, colors }) => {
                                         />
                                     ) : (
                                         <FavoriteBorderIcon
-                                            style={{ color: "white", padding:"10px", width:"30px", height:"37px" }}
+                                            style={{ color: "white",padding:"8px", fontSize:"28px" }}
                                             onClick={() => {
                                                 addDelToFav(item);
                                                 setInFav(isProdInFav(item.id, currentUser));
@@ -199,7 +199,7 @@ const DetailsCard = ({ item, colors }) => {
                                             ) : 
                                             <Link to="/auth">
                                              <FavoriteBorderIcon
-                                            style={{ color: "white", padding:"10px", width:"30px", height:"37px" }}
+                                            style={{ color: "white", padding:"8px", fontSize:"28px" }}
                                                 />
                                             </Link>
                                     }

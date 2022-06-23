@@ -97,15 +97,14 @@ const Order = ({open, setOpen, totalCount, totalPrice, discount, total}) => {
         console.log(checked);
     }
 
-
     return (
                <div style={{ position: "relative" }}>
-                <Dialog PaperProps={{ sx: { width: {xs: "320px", md:"480px"}, height: {xs: "700px", md:"746px"} } }} open={open} onClose={handleClose}>
+                <Dialog PaperProps={{ sx: { width: {xs: "282px", md:"476px"}, height: {xs: "734px", md:"746px"}, margin: 0 }}} open={open} onClose={handleClose}>
         <div className='dialog-inner'>
-            <DialogContent sx={{height: {xs:"680px", md:"680px"}, padding:{xs: "10px", md:"21px"}}}>
+            <DialogContent sx={{height: {xs:"680px", md:"680px"}, padding:{xs: "15px", md:"21px"}}}>
             <div style={{display:"flex", justifyContent:"space-between", alignItems:"flex-start"}}>
                 <h2>Оформление заказа</h2>
-                <CloseIcon sx={{padding: 0}} onClick={handleClose} />
+                <CloseIcon sx={{padding: 0, color:"#1D1D1B"}} onClick={handleClose} />
                 </div>
             <label className='order-label' htmlFor="name">Ваше имя</label>
             <br/>
@@ -134,7 +133,7 @@ const Order = ({open, setOpen, totalCount, totalPrice, discount, total}) => {
             <input onChange={(e)=>handleInputChange(e)} className='order-input' type="text" name='city' id='city' placeholder='Город' />
             <br/>
             <input className='order-checkbox' type="checkbox" value={checked} onChange={(e) => value(e)} name="checked"  />
-            <label htmlFor="checked" className='label'>Согласен с условиями <Link className='cart-link' style={{ textDecoration: 'none', color: "#2F80ED" }} to={'/offerta'}>публичной оферты</Link></label>
+            <label htmlFor="checked" className='label'>Согласен с условиями <a href='/offerta' className='cart-link' style={{ textDecoration: 'none', color: "#2F80ED" }} target="_blank">публичной оферты</a></label>
                         {fill ? <button onClick={() => save()
             } className='active-button'>Заказать</button> : <button className='order-button'>Заказать</button>}
         </DialogContent>

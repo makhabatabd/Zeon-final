@@ -226,7 +226,7 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-             <Dialog
+            <Dialog
             onClose={()=>setOpenDialog(false)}
             open={openDialog}
             >
@@ -235,6 +235,9 @@ const Main = () => {
                     <CloseIcon onClick={() => {
                         setOpenDialog(false)
                         setOpen(false)
+                        setName("")
+                        setPhone("")
+                        setSuccess(false)
                         }} />
                         </button>
                 <DialogContent>
@@ -266,7 +269,7 @@ const Main = () => {
             </div>
             </Dialog>
             <Dialog
-                PaperProps={{ sx: { width: "335px", height: "264px" }}}
+                PaperProps={{ sx: { width: "335px", height: "264px", margin:0 }}}
             onClose={()=>setSuccess(false)}
             open={success}
             >
