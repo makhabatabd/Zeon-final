@@ -45,8 +45,6 @@ const Order = ({open, setOpen, totalCount, totalPrice, discount, total}) => {
         setData(newOrder)
 
          console.log(checked);
-        // console.log(e.target);
-        console.log(newOrder);
     };
 
       function deleteAll() {
@@ -92,9 +90,7 @@ const Order = ({open, setOpen, totalCount, totalPrice, discount, total}) => {
     };
 
     function value(e, callback) {
-        console.log(checked);
         setChecked(!checked)
-        console.log(checked);
     }
 
     return (

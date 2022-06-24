@@ -106,7 +106,18 @@ const Auth = () => {
             )}
           </Form.Item>
         </Form>
-        </div>
+        <span
+        onClick={() => navigate("/passwordreset")}
+        style={{
+          color: "black",
+          fontSize: "15px",
+          marginTop: "-20px",
+          cursor: "pointer",
+        }}
+      >
+        Forgot your password?
+      </span>
+      </div>
     </div>
   );
 };

@@ -49,6 +49,9 @@ function toTitleCase(str) {
   if (str === "beach") {
     return "Одежда на пляж";
   }
+  if (str === "passwordreset") {
+    return "Восстановление пароля";
+  }
 }
 
 export default function BasicBreadCrumbs() {

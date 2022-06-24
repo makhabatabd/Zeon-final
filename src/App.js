@@ -37,6 +37,7 @@ import Everyday from "./components/Everyday/Everyday";
 import Skirts from "./components/Skirts/Skirts";
 import Beach from "./components/Beach/Beach";
 import Jeans from "./components/Jeans/Jeans";
+import PasswordReset from "./components/PasswordReset/PasswordReset";
 
 const theme = createTheme({
   palette: {
@@ -80,6 +81,11 @@ const App = () => {
                               element={<NewDetails />}
                             />
                             <Route path="/" element={<Main />} exact />
+                            <Route
+                              path="/passwordreset"
+                              element={<PasswordReset />}
+                              exact
+                            />
                             <Route
                               path="/favorite"
                               element={<Favorite />}

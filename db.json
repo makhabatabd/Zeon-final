@@ -1354,15 +1354,24 @@
           "id": 2
         },
         {
-          "count": 2,
-          "size": "42-50",
+          "count": 1,
           "amount": "5",
-          "title": "Вечернее платье",
+          "title": "The Organic Cotton Clothes",
           "color": "#73A39D",
-          "price": 1365,
-          "discount": 10,
-          "img": "https://cdn.discordapp.com/attachments/979364144170041408/979364513835020328/unknown.png",
-          "id": 1
+          "price": 12000,
+          "img": "https://cdn.discordapp.com/attachments/979601812472598619/980369976827449364/unknown.png",
+          "size": "46-50",
+          "id": 75
+        },
+        {
+          "count": 1,
+          "amount": "5",
+          "title": "The Organic Cotton Clothes",
+          "color": "#84CC4C",
+          "price": 12000,
+          "img": "https://cdn.discordapp.com/attachments/979601812472598619/980369976827449364/unknown.png",
+          "size": "46-50",
+          "id": 75
         }
       ],
       "orders": [
@@ -1557,6 +1566,12 @@
           ]
         }
       ]
+    },
+    {
+      "user": "makhabat9898@gmail.com",
+      "id": "makhabat9898@gmail.com",
+      "carts": [],
+      "orders": []
     }
   ],
   "everyday": [

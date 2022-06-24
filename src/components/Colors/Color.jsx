@@ -19,6 +19,7 @@ const Color = ({id}) => {
     useEffect(() => {
         getUser()
     }, [currentUser])
+    
     useEffect(() => {
     setInCart(isProd(id))
     }, [isProd]);

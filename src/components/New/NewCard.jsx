@@ -96,7 +96,7 @@ const NewCard = ({ item }) => {
                         onClick={()=>navigate(`/newd/${item.id}`)}
                     />
                     <div className={hover}></div>
-                <CardContent sx={{padding:0}}>
+                <CardContent sx={{padding:"0px 0px 0px 3px"}}>
                 {item.discount ?
                 <div><span style={{marginRight:"8px"}} className='price-discount'>{item.price.toLocaleString().replace(',', ' ')} p</span><span className='discount'>{discount.toLocaleString().replace(',', ' ')} p</span></div> :  
                 <span className='discount'>{item.price.toLocaleString().replace(',', ' ')} p</span>
